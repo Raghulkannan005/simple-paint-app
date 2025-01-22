@@ -216,13 +216,13 @@ class PaintApp:
                 self.undo_stack.append(line)
                 self.last_x = x
                 self.last_y = y
- def clear_canvas(self):
-        # Clear entire canvas
-        try:
-            self.canvas.delete("all")
-            self.undo_stack.clear()
-        except Exception as e:
-            print(f"Error clearing canvas: {e}")
+
+    def stop_drawing(self, event):
+        # Finalize drawing
+        self.drawing = False
+        if self.drawing_shape and self.shape_id:
+            self.undo_stack.append(self.shape_id)
+            self.shape_id = None
 
     # Canvas operation functions
     def clear_canvas(self):
