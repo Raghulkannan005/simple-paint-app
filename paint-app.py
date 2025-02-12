@@ -62,18 +62,18 @@ class PaintApp:
         # Create brush size control section
         size_frame = ttk.LabelFrame(toolbar, text="Brush Size", padding="5")
         size_frame.pack(side="left", padx=5)
-        
+
         # Add brush size slider
         self.brush_slider = ttk.Scale(size_frame, from_=1, to=50, 
                                     orient="horizontal", length=200, 
                                     value=2,
                                     command=self.update_brush_size)
         self.brush_slider.pack(side="left", padx=2)
-        
+
         # Create shape tools section
         shape_frame = ttk.LabelFrame(toolbar, text="Shape Tools", padding="5")
         shape_frame.pack(side="left", padx=5)
-        
+
         # Add shape buttons
         ttk.Button(shape_frame, text="Rectangle", 
                   command=self.use_rectangle).pack(side="left", padx=2)
@@ -81,7 +81,7 @@ class PaintApp:
                   command=self.use_oval).pack(side="left", padx=2)
         ttk.Button(shape_frame, text="Line", 
                   command=self.use_line).pack(side="left", padx=2)
-        
+
         # Create canvas operations section
         operations_frame = ttk.LabelFrame(toolbar, text="Canvas Operations", 
                                         padding="5")
@@ -266,5 +266,4 @@ def main():
     app = PaintApp(root)          # Initialize paint application
     root.mainloop()               # Start event loop
 
-if __name__ == "__main__":
-    main()
+main()
